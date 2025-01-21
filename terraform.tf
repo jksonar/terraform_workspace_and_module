@@ -1,5 +1,11 @@
 # Add backend to store state on consul 
 terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.82.2"
+    }
+  }
   backend "consul" {
     address      = "127.0.0.1:8500"
     scheme       = "http"
